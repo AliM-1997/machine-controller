@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/AliM-1997/machine-controller-back.git
+[submodule "front"]
+	path = front
+	url = https://github.com/AliM-1997/machine-controller-front.git
