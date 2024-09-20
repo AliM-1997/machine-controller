@@ -1,0 +1,91 @@
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+#include <WiFiClient.h>
+#include <ArduinoJson.h>
+
+const char* ssid = "***"; // Replace with your Wi-Fi SSID
+const char* password = "@@@ali*#*"; // Replace with your Wi-Fi password
+const char* serverUrl = "http://192.168.1.6:8000/api/v1/sensordata"; // Replace with your server URL
+
+#define ONE_WIRE_BUS 4 // GPIO pin for OneWire bus
+
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+WiFiClient client;  // Create WiFiClient object
+
+void setup() {
+  Serial.begin(9600);
+  sensors.begin();  // Initialize the DS18B20 sensor
+
+  WiFi.begin(ssid, password);
+  Serial.println();
+  Serial.println("Connecting to Wi-Fi");
+
+  int attempts = 0;
+  while (WiFi.status() != WL_CONNECTED && attempts < 30) {
+    delay(500);
+    Serial.print(".");
+    attempts++;
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println();
+    Serial.print("NodeMCU IP Address: ");
+    Serial.println(WiFi.localIP());
+  } else {
+    Serial.println();
+    Serial.println("Failed to connect to Wi-Fi");
+  }
+}
+
+void loop() {
+  // Request temperature data from the DS18B20 sensor
+  sensors.requestTemperatures();
+  float temperatureC = sensors.getTempCByIndex(0);  // Read temperature in Celsius
+
+  // Check if the temperature reading is valid
+  if (temperatureC == DEVICE_DISCONNECTED_C) {
+    Serial.println("Error: Could not read temperature data");
+    return;  // Skip the rest of the loop if the temperature is invalid
+  }
+
+  Serial.print("Temperature: ");
+  Serial.print(temperatureC);
+  Serial.println(" °C");
+
+  // Send temperature data to server if connected to Wi-Fi
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin(client, serverUrl);
+
+    http.addHeader("Content-Type", "application/json");
+
+    // Create JSON object
+    StaticJsonDocument<200> jsonDoc;
+    jsonDoc["Temperature"] = temperatureC;
+
+    String jsonString;
+    serializeJson(jsonDoc, jsonString);
+    
+    Serial.print("JSON String: ");
+    Serial.println(jsonString); 
+
+    int httpResponseCode = http.POST(jsonString);  // Send POST request
+
+    if (httpResponseCode > 0) {
+      String response = http.getString();
+      Serial.println("Server response: " + response);
+    } else {
+      Serial.println("Error sending POST request: " + String(httpResponseCode));
+    }
+
+    http.end();  // Free resources
+  } else {
+    Serial.println("Error: Not connected to Wi-Fi");
+  }
+
+  delay(10000);  // Delay for 10 seconds before the next reading
+}
