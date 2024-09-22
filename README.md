@@ -56,7 +56,7 @@
 | ------------------------------------------- | ------------------------------------------------ |
 | ![Landing](./readme/assets/admin-login.png) | ![fsdaf](./readme/assets/admin-register.png)     |
 | Dashboard Screen                            | Dark Mode                                        |
-| ![Landing](./readme/assets/preditions.gif)  | ![fsdaf](./readme/assets/dark-mode.png)          |
+| ![Landing](./readme/assets/statistics.gif)  | ![fsdaf](./readme/assets/dark-mode.png)          |
 | Prediction                                  | Selected Machine                                 |
 | ![Landing](./readme/assets/preditions.gif)  | ![Landing](./readme/assets/selected-machine.png) |
 
