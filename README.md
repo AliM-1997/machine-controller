@@ -93,7 +93,13 @@
 
 ### Precision in Development: Harnessing the Power of Unit Testing:
 
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
+- This project includes testing the machine learning model to ensure accurate predictions. Through systematic unit tests, we validate the model's performance, ensuring it consistently delivers reliable results.
+
+| Model Accurancy Testing                                  | Model Accurancy Results                                  |
+| -------------------------------------------------------- | -------------------------------------------------------- |
+| ![Landing](./readme/assets/model_accurancy_test.png)     | ![fsdaf](./readme/assets/model_accurancy_results.png)    |
+| Model Prediction Testing                                 | Model Prediction Results                                 |
+| ![Landing](./readme/assets/model-prediction-testing.png) | ![Landing](./readme/assets/prediction-model-results.png) |
 
 <br><br>
 
