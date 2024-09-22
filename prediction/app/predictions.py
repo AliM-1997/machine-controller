@@ -3,7 +3,8 @@ import joblib
 import os
 from fastapi import HTTPException
 
-model_path = 'model/model.pkl'
+model_path = os.path.join(os.path.dirname(__file__), '../model/model.pkl')
+model_path = os.path.abspath(model_path)
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file not found at {model_path}")
 

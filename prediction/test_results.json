@@ -10,15 +10,15 @@
             "operational_time": 5000.0
         },
         "prediction": [
-            "No Failure"
+            "No_Failure"
         ],
         "probabilities": [
             {
-                "No Failure": 0.34,
-                "Heat Dissipation Failure": 0.19,
-                "Overstrain Failure": 0.32,
-                "Power Failure": 0.15,
-                "Tool Wear Failure": 0.0
+                "No_Failure": 0.34,
+                "Heat_Dissipation_Failure": 0.19,
+                "Overstrain_Failure": 0.32,
+                "Power_Failure": 0.15,
+                "Tool_Wear_Failure": 0.0
             }
         ]
     },
@@ -33,15 +33,15 @@
             "operational_time": 100.0
         },
         "prediction": [
-            "No Failure"
+            "No_Failure"
         ],
         "probabilities": [
             {
-                "No Failure": 0.46,
-                "Heat Dissipation Failure": 0.22,
-                "Overstrain Failure": 0.22,
-                "Power Failure": 0.1,
-                "Tool Wear Failure": 0.0
+                "No_Failure": 0.46,
+                "Heat_Dissipation_Failure": 0.22,
+                "Overstrain_Failure": 0.22,
+                "Power_Failure": 0.1,
+                "Tool_Wear_Failure": 0.0
             }
         ]
     }
