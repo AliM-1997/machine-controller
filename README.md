@@ -73,11 +73,11 @@
 <!-- Prompt Engineering -->
 <img src="./readme/title7.svg"/>
 
-### Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
+### Mastering AI and IoT: Unlocking the Power of Machine Learning
 
-- This project uses advanced prompt engineering techniques to optimize the interaction with natural language processing models. By skillfully crafting input instructions, we tailor the behavior of the models to achieve precise and efficient language understanding and generation for various tasks and preferences.
+- This project integrates cutting-edge machine learning techniques with IoT devices to enhance data-driven decisions. By leveraging IoT sensors and machine learning models, we optimize real-time data analysis, enabling smarter and more efficient operations across various applications.
 
-<br><br>
+  <br><br>
 
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
