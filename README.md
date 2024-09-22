@@ -52,13 +52,13 @@
 
 ### Admin Screens (Web)
 
-| Login Screen                                                                                                  | Register Screen                                  |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| ![Landing](./readme/assets/admin-login.png)                                                                   | ![fsdaf](./readme/assets/admin-register.png)     |
-| Dashboard Screen                                                                                              | Dark Mode                                        |
-| <video width="250" autoplay loop muted><source src="./readme/assets/statistics.mp4" type="video/mp4"></video> | ![fsdaf](./readme/assets/dark-mode.png)          |
-| Prediction                                                                                                    | Selected Machine                                 |
-| <video width="250" autoplay loop muted><source src="./readme/assets/preditions.mp4" type="video/mp4"></video> | ![Landing](./readme/assets/selected-machine.png) |
+| Login Screen                                | Register Screen                                  |
+| ------------------------------------------- | ------------------------------------------------ |
+| ![Landing](./readme/assets/admin-login.png) | ![fsdaf](./readme/assets/admin-register.png)     |
+| Dashboard Screen                            | Dark Mode                                        |
+| ![Landing](./readme/assets/preditions.gif)  | ![fsdaf](./readme/assets/dark-mode.png)          |
+| Prediction                                  | Selected Machine                                 |
+| ![Landing](./readme/assets/preditions.gif)  | ![Landing](./readme/assets/selected-machine.png) |
 
 <br><br>
 
