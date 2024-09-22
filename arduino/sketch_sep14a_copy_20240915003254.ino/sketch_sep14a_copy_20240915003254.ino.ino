@@ -5,9 +5,9 @@
 #include <WiFiClient.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "***";
-const char* password = "@@@ali*#*";
-const char* serverUrl = "http://192.168.1.12:8000/api/v1/sensor-data";
+const char* ssid = "***"; 
+const char* password = "@@@ali*#*"; 
+const char* serverUrl = "http://192.168.1.11:8000/api/v1/sensordata"; 
 
 #define ONE_WIRE_BUS 4 
 
@@ -18,7 +18,7 @@ WiFiClient client;
 
 void setup() {
   Serial.begin(9600);
-  sensors.begin();
+  sensors.begin();  
 
   WiFi.begin(ssid, password);
   Serial.println();
@@ -43,11 +43,11 @@ void setup() {
 
 void loop() {
   sensors.requestTemperatures();
-  float temperatureC = sensors.getTempCByIndex(0);
+  float temperatureC = sensors.getTempCByIndex(0); 
 
   if (temperatureC == DEVICE_DISCONNECTED_C) {
-    Serial.println("Error: Could not read temperature data.");
-    return;
+    Serial.println("Error: Could not read temperature data");
+    return; 
   }
 
   Serial.print("Temperature: ");
@@ -57,7 +57,6 @@ void loop() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     http.begin(client, serverUrl);
-    http.setTimeout(15000); // Increase timeout to 15 seconds
 
     http.addHeader("Content-Type", "application/json");
 
@@ -66,29 +65,23 @@ void loop() {
 
     String jsonString;
     serializeJson(jsonDoc, jsonString);
+    
+    Serial.print("JSON String: ");
+    Serial.println(jsonString); 
 
-    int httpResponseCode;
-    int retryCount = 0;
-    const int maxRetries = 3;
+    int httpResponseCode = http.POST(jsonString);
 
-    do {
-      httpResponseCode = http.POST(jsonString);
+    if (httpResponseCode > 0) {
+      String response = http.getString();
+      Serial.println("Server response: " + response);
+    } else {
+      Serial.println("Error sending POST request: " + String(httpResponseCode));
+    }
 
-      if (httpResponseCode > 0) {
-        String response = http.getString();
-        Serial.println("Server response: " + response);
-        break;
-      } else {
-        Serial.print("Error sending POST request: ");
-        Serial.println(http.errorToString(httpResponseCode));
-        delay(5000); 
-      }
-    } while (++retryCount < maxRetries);
-
-    http.end();
+    http.end(); 
   } else {
     Serial.println("Error: Not connected to Wi-Fi");
   }
 
-  delay(100);
+  delay(10000);  
 }
