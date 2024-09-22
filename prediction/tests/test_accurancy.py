@@ -7,7 +7,7 @@ model_path = os.path.join(os.path.dirname(__file__), '../model/model.pkl')
 model_path = os.path.abspath(model_path)
 model = joblib.load(model_path)
 
-test_data_path = 'data/raw/accurate_machine_failure_data.csv'
+test_data_path = 'C:/Users/Amort/OneDrive/Desktop/final-project/machine-controller/prediction/data/raw/accurate_machine_failure_data.csv'
 test_data = pd.read_csv(test_data_path)
 
 X_test = test_data[['Air Temperature (K)', 'Process Temperature (K)', 'Rotational Speed (RPM)', 'Torque (Nm)', 'Tool Wear (hours)']]
