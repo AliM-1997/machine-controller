@@ -39,6 +39,21 @@
 
 <br><br>
 
+<!-- UI UX -->
+<img src="./readme/title4.svg"/>
+
+> We utilized Figma to design and prototype our project, allowing for collaborative iterations on the UI/UX. With Figma’s powerful tools, we created intuitive layouts and interactive mockups, ensuring a streamlined user experience before moving into development.
+
+- Project [Figma](https://www.figma.com/design/Micolxfjp7URg5PpFRT8MP/final-project?node-id=0-1&node-type=canvas&t=vKQJoL1Q4ExUAwjk-0) design
+
+### Mockups
+
+| All Machines Screen                            | User Alerts Screen                                |
+| ---------------------------------------------- | ------------------------------------------------- |
+| ![Landing](./readme/assets/machines-figma.png) | ![Landing](./readme/assets/user-alerts-figma.png) |
+
+<br><br>
+
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
