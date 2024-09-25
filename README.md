@@ -82,9 +82,13 @@
 <!-- AWS Deployment -->
 <img src="./readme/title8.svg"/>
 
-### Efficient AI Deployment: Unleashing the Potential with AWS Integration:
+### Efficient Machine Controller Deployment: Unleashing the Potential with AWS Integration
 
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
+- This project leverages AWS deployment strategies to seamlessly integrate and deploy the machine-controller-back application. Focusing on scalability, reliability, and performance, we ensure that the application delivers robust and responsive solutions for managing machines and their associated processes, allowing for efficient operation in real-world environments.
+
+| Login Testing                                     | Registration Testing                                   |
+| ------------------------------------------------- | ------------------------------------------------------ |
+| ![Landing](./readme/assets/aws-login-testing.png) | ![fsdaf](./readme/assets/aws-registration-testing.png) |
 
 <br><br>
 
