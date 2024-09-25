@@ -100,6 +100,8 @@
 | ![Landing](./readme/assets/model_accurancy_test.png)     | ![fsdaf](./readme/assets/model_accurancy_results.png)    |
 | Model Prediction Testing                                 | Model Prediction Results                                 |
 | ![Landing](./readme/assets/model-prediction-testing.png) | ![Landing](./readme/assets/prediction-model-results.png) |
+| Fetching Machine Testing                                 | Registration testing                                     |
+| ![Landing](./readme/assets/FetchingMachinesTest.gif)     | ![Landing](./readme/assets/RegistrationTesting.gif)      |
 
 <br><br>
 
